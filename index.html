@@ -11,21 +11,18 @@
     <h1>Beans Collection</h1>
     <div class="controls">
         <input type="search" id="searchBar" placeholder="Search...">
-        <button id="randomButton" class="darkfix">Random</button>
-        <button id="toggleTheme" class="darkfix">Dark Mode</button>
+        <button id="randomButton">Random</button>
+        <button id="toggleTheme">Dark Mode</button>
     </div>
     <div class="button-container" id="buttonContainer">
-        <!-- Buttons are dynamically created via JavaScript -->
     </div>
     <footer>By the Last X and BloxyWagyu </footer>
 
     <button id="academicButton">Academic Sites</button>
     <button id="backToGameSitesButton">Back to Game Sites</button>
 
-    <!-- Full-Screen iframe -->
     <iframe id="iframeContainer"></iframe>
 
-    <!-- Exit Button -->
     <button id="exitButton" class="exit-button">X</button>
 
     <script>
@@ -89,7 +86,6 @@
     </script>
 
     <script>
-        // Default URL collection (Game Sites)
         const urls = [
             { name: "Nettleweb", url: "https://nettleweb.pages.dev/" },
             { name: "Half Life", url: "https://x8bitrain.github.io/webXash/" },
@@ -126,7 +122,6 @@
             { name: "Phet Labs", url: "https://phet.colorado.edu/" }
         ];
     
-        // Dynamic URL buttons
         const buttonContainer = document.getElementById('buttonContainer');
         const iframeContainer = document.getElementById('iframeContainer');
         const exitButton = document.getElementById('exitButton');
@@ -134,42 +129,34 @@
         const backToGameSitesButton = document.getElementById('backToGameSitesButton');
         let currentUrls = urls;
     
-        // Clear the container before adding new buttons
         buttonContainer.innerHTML = ''; // Clear the existing buttons
     
-        // Create buttons dynamically for the game sites
         function createButton(name, url) {
             const button = document.createElement('button');
             button.textContent = name;
             button.onclick = function() {
-                // Open the game site in the iframe
-                iframeContainer.style.display = 'block'; // Show iframe
+                iframeContainer.style.display = 'block';
                 iframeContainer.src = url;
-                exitButton.style.display = 'block'; // Show exit button
+                exitButton.style.display = 'block';
             };
             buttonContainer.appendChild(button);
         }
     
-        // Populate game site buttons
         urls.forEach(item => {
             createButton(item.name, item.url);
         });
-    
-        // Prevent external redirects from opening in a new tab by checking if the iframe is redirected
-        iframeContainer.onload = function() {
+            iframeContainer.onload = function() {
             const iframeDoc = iframeContainer.contentDocument || iframeContainer.contentWindow.document;
             const iframeWindow = iframeContainer.contentWindow;
     
             iframeWindow.onbeforeunload = function() {
                 const currentLocation = iframeWindow.location.href;
                 if (currentLocation !== iframeContainer.src) {
-                    iframeContainer.src = currentLocation; // Force redirection to stay in iframe
+                    iframeContainer.src = currentLocation;
                 }
             };
         };
-    
-        // Toggle between game and academic sites
-        academicButton.onclick = function() {
+            academicButton.onclick = function() {
             currentUrls = academicUrls;
             buttonContainer.innerHTML = ''; // Clear the existing buttons
             academicUrls.forEach(item => {
@@ -181,39 +168,36 @@
                 };
                 buttonContainer.appendChild(button);
             });
-            academicButton.style.display = 'none'; // Hide the academic button
-            backToGameSitesButton.style.display = 'block'; // Show back button
+            academicButton.style.display = 'none'; 
+            backToGameSitesButton.style.display = 'block'; 
         };
     
         backToGameSitesButton.onclick = function() {
             currentUrls = urls;
-            buttonContainer.innerHTML = ''; // Clear the existing buttons
+            buttonContainer.innerHTML = '';
             urls.forEach(item => {
-                createButton(item.name, item.url); // Create game site buttons
+                createButton(item.name, item.url);
             });
-            backToGameSitesButton.style.display = 'none'; // Hide the back button
-            academicButton.style.display = 'block'; // Show the academic button
+            backToGameSitesButton.style.display = 'none';
+            academicButton.style.display = 'block';
         };
     
-        // Exit iframe and hide the button
         exitButton.onclick = function() {
-            iframeContainer.style.display = 'none'; // Hide iframe
-            exitButton.style.display = 'none'; // Hide exit button
-            iframeContainer.src = ''; // Fully clear iframe content
+            iframeContainer.style.display = 'none';
+            exitButton.style.display = 'none';
+            iframeContainer.src = '';
         };
     
-        // Toggle theme
         document.getElementById('toggleTheme').onclick = function() {
             document.body.classList.toggle('dark-mode');
         };
     
-        // Random site functionality
         document.getElementById('randomButton').onclick = function() {
             const randomIndex = Math.floor(Math.random() * currentUrls.length);
             const randomUrl = currentUrls[randomIndex].url;
             iframeContainer.style.display = 'block';
             iframeContainer.src = randomUrl;
-            exitButton.style.display = 'block'; // Show exit button
+            exitButton.style.display = 'block';
         };
     </script>
     
