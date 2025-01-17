@@ -111,7 +111,6 @@
             font-size: 0.9rem;
         }
 
-        /* Exit Button */
         .exit-button {
             position: fixed;
     top: 10px;
@@ -151,7 +150,6 @@
             background: linear-gradient(135deg, #f1c40f, #f39c12);
         }
 
-        /* Back Button for Academic Sites */
         #backToGameSitesButton {
             position: fixed;
             bottom: 20px;
@@ -181,7 +179,9 @@
             background-color: #34495e;
             color: black;
         }
-
+        .fter {
+        color: ecf0f1;
+        }
         body.dark-mode .button-container {
             background: rgba(255, 255, 255, 0.1);
             color: black
