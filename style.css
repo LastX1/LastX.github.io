@@ -1,4 +1,3 @@
- /* Base Styles */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -18,7 +17,7 @@
             height: 100%;
             top: 0;
             left: 0;
-            z-index: -1; /* Behind all content */
+            z-index: -1; 
 
         }
 
@@ -84,7 +83,7 @@
             top: 0;
             left: 0;
             z-index: 1;
-            display: none; /* Initially hidden */
+            display: none; 
         }
 
         button {
@@ -109,7 +108,7 @@
         footer {
             margin-top: 10px;
             font-size: 0.9rem;
-            color: ecf0f1;
+            color: ecf0f1; /* im blind and forgot a hashtag for the dark mode :skull: */
         }
 
         .exit-button {
@@ -119,19 +118,18 @@
     background-color: white;
     color: black;
     border: none;
-    font-size: 1.8rem; /* Increased font size */
-    width: 50px; /* Set width to a fixed size */
-    height: 50px; /* Set height to match the width */
-    border-radius: 50%; /* Ensures the button is circular */
+    font-size: 1.8rem; 
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%; 
     cursor: pointer;
     z-index: 2;
-    display: none; /* Initially hidden */
+    display: none; 
     text-align: center;
-    line-height: 50px; /* Centers the 'X' vertically */
-    padding: 0; /* Remove any padding to prevent distortion */
+    line-height: 50px; 
+    padding: 0; 
         }
 
-        /* New Button for Academic Sites */
         #academicButton {
             position: fixed;
             bottom: 20px;
@@ -163,14 +161,13 @@
             border-radius: 12px;
             cursor: pointer;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            display: none; /* Initially hidden */
+            display: none; 
         }
 
         #backToGameSitesButton:hover {
             background: linear-gradient(135deg, #c0392b, #e74c3c);
         }
 
-        /* Dark mode styles */
         body.dark-mode {
             background: linear-gradient(135deg, #2c3e50, #34495e);
             color: #ecf0f1;
