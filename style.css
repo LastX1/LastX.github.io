@@ -177,7 +177,7 @@
             color: #ecf0f1;
         }
 
-        body.dark-mode h1, body.dark-mode .controls button {
+        body.dark-mode, body.dark-mode .controls button {
             background-color: #34495e;
             color: black;
         }
