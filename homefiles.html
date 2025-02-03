@@ -20,7 +20,7 @@
     <button id="exitButton" class="exit-button">X</button>
 
     <script>
-        /* Initialize particles.js */
+        /* particles.js */
         particlesJS('particles-js', {
             particles: {
                 number: {
@@ -93,7 +93,7 @@
         const backToGameSitesButton = document.getElementById('backToGameSitesButton');
         let currentUrls = urls;
     
-        buttonContainer.innerHTML = ''; // Clear the existing buttons
+        buttonContainer.innerHTML = ''; // clear existing buttons
     
         function createButton(name, url) {
             const button = document.createElement('button');
@@ -122,7 +122,7 @@
         };
             academicButton.onclick = function() {
             currentUrls = academicUrls;
-            buttonContainer.innerHTML = ''; // Clear the existing buttons
+            buttonContainer.innerHTML = ''; // clear existing buttons
             academicUrls.forEach(item => {
         exitButton.onclick = function() {
             iframeContainer.style.display = 'none';
